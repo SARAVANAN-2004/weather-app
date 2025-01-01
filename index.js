@@ -13,7 +13,7 @@ var lat;
 var lon;
 const apikey = "aba6ff9d6de967d5eac6fd79114693cc";
 const units = "metric"; 
-
+// default data
 var data = {
     coord: { lon: 80.2705, lat: 13.0843 },
     weather: [ [Object] ],
@@ -45,29 +45,52 @@ var data = {
     cod: 200
   }
 
+var sunrise,sunset,windSpeed,curLocation;
 
+async function getlatandlan(location) {
+  try {
+    const respone = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${apikey}`);
+    lat = respone.data[0].lat;
+    lon = respone.data[0].lon;
+  } catch (error) {
+    console.log("error in getting the lat and lan");
+  }
+}
+
+async function  getData(location) {
+  curLocation = location || "Chennai";
+  await getlatandlan(curLocation);
+  const respone  = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=${units}`);
+  data = respone.data;
+  sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+  sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+  windSpeed = Math.floor(data.wind.speed);
+}
 
 app.get("/",async (req,res)=>{
-
     try {
-        // const respone  = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=13.0836939&lon=80.270186&appid=aba6ff9d6de967d5eac6fd79114693cc&units=metric");
-        // data = respone.data;
-        // console.log(respone.data);
-        console.log("data inside");
-        console.log(data);
-        const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
-        const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
-        const windSpeed = Math.floor(data.wind.speed);
+        await getData();
         res.render("index.ejs",{data:data,
+          location: curLocation,
             sunrise: sunrise,
             sunset: sunset,
             windSpeed :windSpeed
         });
     } catch (error) {
-        console.log(error);
         res.send("error");
     }
 });
+
+app.post("/",async (req,res)=>{
+  curLocation = req.body.location;
+  await getData(curLocation);
+  res.render("index.ejs",{data:data,
+    location: curLocation,
+      sunrise: sunrise,
+      sunset: sunset,
+      windSpeed :windSpeed
+  });
+})
 
 
 

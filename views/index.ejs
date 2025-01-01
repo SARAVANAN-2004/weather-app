@@ -12,8 +12,13 @@
     </header>
     <main class="container">
         <div class="weather-card">
+            <form class="location-form" action="/" method="POST">
+                <input type="text" name="location" id="location" placeholder="Enter location" required>
+                <input type="submit" formaction="/"  name="Get Weather">
+            </form>
             <h2>Current Weather</h2>
             <ul class="weather-details">
+                <li><strong>location:</strong> <%= location %></li>
                 <li><strong>Temperature:</strong> <%= data.main.temp %>°C</li>
                 <li><strong>Feels Like:</strong> <%= data.main.feels_like %>°C</li>
                 <li><strong>Pressure:</strong> <%= data.main.pressure %> hPa</li>
