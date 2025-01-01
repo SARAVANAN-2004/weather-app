@@ -57,10 +57,11 @@ app.get("/",async (req,res)=>{
         console.log(data);
         const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
         const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
-
+        const windSpeed = Math.floor(data.wind.speed);
         res.render("index.ejs",{data:data,
             sunrise: sunrise,
-            sunset: sunset
+            sunset: sunset,
+            windSpeed :windSpeed
         });
     } catch (error) {
         console.log(error);

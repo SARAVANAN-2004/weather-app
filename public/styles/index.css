@@ -1,0 +1,69 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header Styling */
+.header {
+    background-color: #0078d7;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Container */
+.container {
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather Card */
+.weather-card {
+    text-align: center;
+}
+
+.weather-card h2 {
+    font-size: 1.8rem;
+    color: #0078d7;
+    margin-bottom: 15px;
+}
+
+/* Weather Details */
+.weather-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.weather-details li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-details li strong {
+    color: #555;
+}

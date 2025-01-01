@@ -3,42 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
-    <h1>Weather App</h1>
-    <div>
-        <ol>
-            <ul>
-                current temperature : <%= data.main.temp %>
+    <header class="header">
+        <h1>Weather App</h1>
+    </header>
+    <main class="container">
+        <div class="weather-card">
+            <h2>Current Weather</h2>
+            <ul class="weather-details">
+                <li><strong>Temperature:</strong> <%= data.main.temp %>°C</li>
+                <li><strong>Feels Like:</strong> <%= data.main.feels_like %>°C</li>
+                <li><strong>Pressure:</strong> <%= data.main.pressure %> hPa</li>
+                <li><strong>Humidity:</strong> <%= data.main.humidity %>%</li>
+                <li><strong>Longitude:</strong> <%= data.coord.lon %></li>
+                <li><strong>Latitude:</strong> <%= data.coord.lat %></li>
+                <li><strong>Wind Speed:</strong> <%= windSpeed %> km/h</li>
+                <li><strong>Sunrise:</strong> <%= sunrise %></li>
+                <li><strong>Sunset:</strong> <%= sunset %></li>
             </ul>
-            <ul>
-                Feels like : <%= data.main.feels_like%>
-            </ul>
-            <ul>
-                pressure : <%= data.main.pressure %>
-            </ul>
-            <ul>
-                humidity : <%= data.main.humidity %>
-            </ul>
-            <ul>
-                current longitude : <%= data.coord.lon %>
-            </ul>
-            <ul>
-                current lattitude : <%= data.coord.lat%>
-            </ul>
-            <ul>
-                wind speed : <%= data.wind.speed %> km
-
-            </ul>
-            <ul>
-                current sunrise : <%= sunrise %>
-            </ul>
-            <ul>
-                current sunset : <%= sunset %>
-            </ul>
-
-        </ol>
-    </div>
+        </div>
+    </main>
 </body>
 </html>
