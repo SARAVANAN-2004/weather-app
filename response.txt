@@ -1,0 +1,31 @@
+data: {
+    coord: { lon: 80.2705, lat: 13.0843 },
+    weather: [ [Object] ],
+    base: 'stations',
+    main: {
+      temp: 29.09,
+      feels_like: 33.51,
+      temp_min: 28.35,
+      temp_max: 30.15,
+      pressure: 1015,
+      humidity: 73,
+      sea_level: 1015,
+      grnd_level: 1014
+    },
+    visibility: 3500,
+    wind: { speed: 4.12, deg: 70 },
+    clouds: { all: 40 },
+    dt: 1735711009,
+    sys: {
+      type: 2,
+      id: 2093220,
+      country: 'IN',
+      sunrise: 1735693272,
+      sunset: 1735734199
+    },
+    timezone: 19800,
+    id: 1465730,
+    name: 'Park Town',
+    cod: 200
+  }
+}

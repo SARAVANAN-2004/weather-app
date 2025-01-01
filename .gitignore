@@ -1,0 +1,48 @@
+# Node.js
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor files
+.vscode/
+*.suo
+*.user
+*.sln
+*.vspscc
+*.scc
+*.tmp
+*.bak
+*.suo
+*.user
+*.SLN
+*.vssscc
+
+# Testing
+/coverage/
+/tests/
+
+# Build
+/dist/
+/build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Local configuration
+*.env
+*.env.*
+.env.local
+.secret
+
+# IDE specific files
+.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log
+
+# Temporary files
+*.tmp
+*~

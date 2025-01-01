@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div>
+        <ol>
+            <ul>
+                current temperature : <%= data.main.temp %>
+            </ul>
+            <ul>
+                Feels like : <%= data.main.feels_like%>
+            </ul>
+            <ul>
+                pressure : <%= data.main.pressure %>
+            </ul>
+            <ul>
+                humidity : <%= data.main.humidity %>
+            </ul>
+            <ul>
+                current longitude : <%= data.coord.lon %>
+            </ul>
+            <ul>
+                current lattitude : <%= data.coord.lat%>
+            </ul>
+            <ul>
+                wind speed : <%= data.wind.speed %> km
+
+            </ul>
+            <ul>
+                current sunrise : <%= sunrise %>
+            </ul>
+            <ul>
+                current sunset : <%= sunset %>
+            </ul>
+
+        </ol>
+    </div>
+</body>
+</html>
